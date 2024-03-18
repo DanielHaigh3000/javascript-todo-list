@@ -45,7 +45,6 @@ body {
   align-items: center;
   display: flex;
   font-family: 'Montserrat', sans-serif;
-  height: 100vh;
   justify-content: center;
   padding: 2rem;
 }
@@ -64,7 +63,7 @@ h1 {
 
 .todo {
   display: flex;
-  height: 70vh;
+  height: 40vh;
   margin: 2rem;
   width: 90%;
 }
@@ -74,7 +73,7 @@ h1 {
   border-radius: 10px;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   display: flex;
-  flex: 1 1 auto;
+  flex: 1 1 50%;
   flex-direction: column;
   margin-right: 2rem;
   padding: 1rem;
@@ -111,7 +110,7 @@ h1 {
 
 .todo__tasks {
   display: flex;
-  flex: 1 1 auto;
+  flex: 1 1 50%;
   flex-direction: column;
 }
 
@@ -153,8 +152,21 @@ h1 {
 .task__title {
   font-size: 1rem;
   padding: 0 1rem;
+  max-width: 90%;
+  word-wrap: break-word;
 }
 
 .task__trash {
   height: 25px;
+}
+
+@media (max-width: 900px) {
+  .todo {
+    flex-direction: column;
+    width: 90%;
+  }
+  .todo__form {
+    margin-bottom: 2rem;
+    margin-right: 0;
+  }
 }
