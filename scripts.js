@@ -152,3 +152,7 @@ displayTasks(tasks);
 // v3. Status messages (task added, task removed, etc.)
 // v4. Nicer looking UI
 // v5. Drag and drop elements?
+
+/******************* THINGS TO FIX ********************/
+// 1. Checkboxes and trash can icons get smaller when task label has long text
+// 2. Make entire app more responsive
