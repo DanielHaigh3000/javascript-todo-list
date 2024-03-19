@@ -21,30 +21,33 @@ let idNum = localStorage.getItem('idNum') ? localStorage.getItem('idNum') : 0;
 
 ///////////////// Do the things
 const addTask = function () {
-  // Push new task to tasks array
-  tasks.push({
-    id: `${++idNum}`,
-    title: `${todoTasksInput.value}`,
-    isChecked: false,
-  });
+  // If task form input is NOT empty...
+  if (todoTasksInput.value !== '') {
+    // Push new task to tasks array
+    tasks.push({
+      id: `${++idNum}`,
+      title: `${todoTasksInput.value}`,
+      isChecked: false,
+    });
 
-  // Update tasks array in localStorage
-  localStorage.setItem('tasks', JSON.stringify(tasks));
-  // Update idNum in localStorage
-  localStorage.setItem('idNum', idNum);
+    // Update tasks array in localStorage
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    // Update idNum in localStorage
+    localStorage.setItem('idNum', idNum);
 
-  // Display the new task
-  const html = `
+    // Display the new task
+    const html = `
     <li class="task">
       <input type="checkbox" id="task-${idNum}" name="task-${idNum}" class="task__checkbox" />
       <label for="task-${idNum}" class="task__title">${todoTasksInput.value}</label>
       <a href="#" title="Move to Trash"><img src="trash.svg" class="task__trash" alt="Move to Trash" /></a>
     </li>
   `;
-  todoTasksIncomplete.innerHTML += html;
+    todoTasksIncomplete.innerHTML += html;
 
-  // Clear new task input field
-  todoTasksInput.value = '';
+    // Clear new task input field
+    todoTasksInput.value = '';
+  }
 };
 
 const displayTasks = function () {
